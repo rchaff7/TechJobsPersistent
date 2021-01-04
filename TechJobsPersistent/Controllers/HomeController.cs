@@ -59,8 +59,9 @@ namespace TechJobsPersistent.Controllers
                 context.SaveChanges();
                 return Redirect("/Home");
             }
-
-            viewModel =  new AddJobViewModel(context.Employers.ToList(), context.Skills.ToList(), selectedSkills);
+            
+            ViewBag.Checkboxes = selectedSkills.ToList();
+            viewModel = new AddJobViewModel(context.Employers.ToList(), context.Skills.ToList());
             return View("AddJob", viewModel);
         }
 

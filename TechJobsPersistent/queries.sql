@@ -1,4 +1,4 @@
---Part 1 SQL TASK: At this point, you will have tables for Jobs, Employers, Skills, and JobSkills. In queries.sql under “Part 1”, list the columns and their data types in the Jobs table.
+--Part 1
 -- 4 ways to show the same info
 explain jobs;
 describe jobs;
@@ -13,4 +13,6 @@ select name from employers
 where location = 'st. louis city';
 
 --Part 3
-
+select Name, Description from skills
+where id in (select skillid from jobskills)
+order by Name;

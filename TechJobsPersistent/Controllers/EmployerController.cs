@@ -49,7 +49,6 @@ namespace TechJobsPersistent.Controllers
 
         public IActionResult About(int id)
         {
-            // TODO  About() currently returns a view with vital information about each employer such as their name and location. Make sure that the method is actually passing an Employer object to the view for display
             return View(context.Employers.Find(id));
         }
     }

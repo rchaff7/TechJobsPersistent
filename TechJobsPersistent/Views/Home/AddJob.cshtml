@@ -19,7 +19,7 @@
         @foreach(Skill skill in Model.Skills)
         {
             <label >@skill.Name</label>
-            <input type="checkbox" name="selectedSkills" value="@skill.Id" @if( checked=" " />
+            <input type="checkbox" name="selectedSkills" value="@skill.Id" checked="@(ViewBag.Checkboxes != null && ViewBag.Checkboxes.IndexOf(skill.Id.ToString()) > -1)" />
         }
         <br />
         <a asp-controller="Skill" asp-action="Add">Add New Skill</a>
